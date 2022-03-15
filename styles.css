@@ -2,3 +2,149 @@
     padding: 0;
     margin: 0;
 }
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --pink: #fd71af;
+    --light-pink: #fd71b02f; 
+    --green: #00b884;
+    --purple: #9b51e0;
+    --low-purple: #9b51e02d;
+    --dark-purple: #9231ec;
+    --light-purple: #9b51e018;
+    --yellow: #f7ce51;
+    --white: #ffffff;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--purple);
+    font-family: 'Roboto', sans-serif;
+    padding: 5px 10px;
+    margin: 10px 0 20px 0;
+}
+
+.container {
+    min-height: 100px;
+    width: 600px;
+    border-radius: 20px;
+    background-color: var(--light-purple);
+    border: 2px solid var(--purple);
+    padding: 20px;
+    margin: auto;
+}
+
+.search {
+    margin: 20px 0;
+    width: 100%;
+    height: 35px;
+    /* background-color: #00b884; */
+}
+
+.search input {
+    height: 30px;
+    width: 87%;
+    font-size: 1.2rem;
+    color: var(--purple);
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--purple);
+    background-color: transparent;
+}
+
+.search input::placeholder {
+    color: var(--purple);
+}
+
+.btn {
+    box-sizing: border-box;
+    padding: 5px 14px;
+    color: var(--white);
+    font-size: 1.2rem;
+    border: 2px solid var(--purple);
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--purple);
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.514);
+}
+
+.btn:hover {
+    background-color: var(--dark-purple);
+    border-color: var(--dark-purple);
+    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.651);
+}
+
+.todos {
+    margin: 50px 0 20px 0;
+    min-height: 50px;
+    /* max-height: 450px; */
+    display: flex;
+    flex-direction: column-reverse;
+    /* overflow-y: scroll; */
+}
+
+.temp-msg {
+    color: var(--purple);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.todo {
+    padding: 5px 10px;
+    margin: 15px 0;
+    min-height: 15px;
+    /* border: 2px solid var(--pink); */
+    border-radius: 20px;
+    background-color: var(--low-purple);
+    /* background-color: #00b884; */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo input {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.todo .msg {
+    margin: 0 20px;
+}
+
+.todo p {
+    display: inline;
+    text-align: left;
+    font-size: 1.2rem;
+    color: var(--dark-purple);
+}
+
+.del {
+    border: none;
+    background-color: transparent;
+    border-radius: 20px;
+    transition: background 0.2s ease-in;
+}
+
+.del:hover {
+    background-color: var(--light-pink);
+}
+
+.todo img {
+    padding: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    /* background-color: #00b884; */
+}
+
+.work-completed {
+    text-decoration: line-through;
+}

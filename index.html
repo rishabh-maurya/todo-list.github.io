@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
     <!-- css link -->
     <link rel="stylesheet" href="styles.css">
     <!-- script -->
@@ -11,7 +18,25 @@
 
     <title>Todo-List</title>
 </head>
+
 <body>
-    <h1>Todo-List</h1>
+    <h1>Todo List</h1>
+    <div class="container">
+        <div class="search">
+            <input id="todo-input" type="text" placeholder="type here...">
+            <button id="add-todo" class="btn">Add</button>
+        </div>
+        <div class="todos" id="todos-box">
+            <!-- <p class="temp-msg" id="temp-msg">Plan your day</p> -->
+            <!-- <div class="todo" id="todo-items">
+                <div class="checkbox"><input type="checkbox" name="ok" id="workDone"></div>
+                <div class="msg">
+                    <p class="" id="work">You can add your todo like this.</p>
+                </div>
+                <button class="del" id="delete-todo"><img src="images/delete.png" height="30" width="30" alt="delete"></button>
+            </div> -->
+        </div>
+    </div>
 </body>
+
 </html>
