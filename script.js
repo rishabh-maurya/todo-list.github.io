@@ -9,6 +9,10 @@ const tempMsg = document.getElementById("temp-msg");
 
 // todos data collection array
 let todos_data = [];
+let localStorage_data = JSON.parse(localStorage.getItem("todoData"));
+if(localStorage_data != null) {
+    todos_data = localStorage_data;
+}
 let flag = true;
 
 // all events ------------------------------------------------------------------------>
@@ -20,6 +24,9 @@ addTodoButton.addEventListener("click", () => {
     if (input.length <= 100 && input.length > 0) {
         todos_data.push(input);
         todoInput.value = null;
+        
+        // update local storage with new data
+        localStorage.setItem("todoData", JSON.stringify(todos_data));
         // disable temp msg
         // disableTempMsg();
         showTodo(todos_data.length - 1);
@@ -50,6 +57,20 @@ let deleteTodo = (index) => {
     const getTodo = document.getElementById(`todo-items-${index}`);
     getTodo.remove();
     todos_data.splice(index, 1);
+
+    // get todo data from local storage
+    todos_data = JSON.parse(localStorage.getItem("todoData"));
+    // search and delete this item from local storage
+    todos_data.forEach((data, idx) => {
+        if(idx === index) {
+            todos_data.splice(idx, 1);
+            return;
+        }
+    });
+    // clear local storage
+    localStorage.clear();
+    // update local storage with new todo data
+    localStorage.setItem("todoData", JSON.stringify(todos_data));
     // disableTempMsg();
 }
 
@@ -67,6 +88,13 @@ let showTodo = (index) => {
                 </div>
             `
     todosBox.innerHTML += html;
+}
+
+// if some data already stored in local storage then first show data
+if(todos_data.length != null) {
+    todos_data.forEach((data, idx) => {
+        showTodo(idx);
+    });
 }
 
 
