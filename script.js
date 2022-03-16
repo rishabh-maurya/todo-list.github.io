@@ -24,7 +24,7 @@ addTodoButton.addEventListener("click", () => {
     if (input.length <= 100 && input.length > 0) {
         todos_data.push(input);
         todoInput.value = null;
-        
+
         // update local storage with new data
         localStorage.setItem("todoData", JSON.stringify(todos_data));
         // disable temp msg
@@ -84,7 +84,7 @@ let showTodo = (index) => {
                     <div class="msg">
                         <p class="" id="work">${todos_data[index]}</p>
                     </div>
-                    <button class="del" id=${index} onclick="deleteTodo(${index})"><img src="images/delete.png" height="30" width="30" alt="delete"></button>
+                    <button class="del" id=${index} onclick="deleteTodo(${index})"><img src="images/delete.png" height="25" width="25" alt="delete"></button>
                 </div>
             `
     todosBox.innerHTML += html;
